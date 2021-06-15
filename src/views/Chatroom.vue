@@ -1,10 +1,14 @@
 <template>
-  chatroom
+  <div class="bg-white justify-self-center w-3/5 p-8 rounded-2xl shadow-lg mt-20 grid">
+      <Navbar />
+  </div>
 </template>
 
 <script>
-export default {
+import Navbar from '../components/Navbar.vue'
 
+export default {
+    components: { Navbar}
 }
 </script>
 
