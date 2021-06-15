@@ -16,7 +16,7 @@ import useLogout from '../composables/useLogout'
 import getUser from '../composables/getUser'
 
 export default {
-    setup() {
+    setup(props, context) {
         const { logout, error} = useLogout()
         const { user } = getUser()
 
@@ -24,6 +24,7 @@ export default {
             await logout()
             if (!error.value) {
                 console.log('logged out')
+                context.emit('logout')
             }
         }
 
