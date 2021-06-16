@@ -1,11 +1,11 @@
 <template>
   <nav v-if="user" class="flex justify-between items-center">
         <div>
-            <p class="text-lg font-normal text-gray-700 mb-1">Hey there {{ user.displayName }}</p>
-            <p class="text-sm font-light text-gray-400">Currently logged in as {{ user.email }}</p>
+            <p class="text-md md:text-lg font-normal text-gray-700 mb-1">Hey there {{ user.displayName }}</p>
+            <p class="text-xs md:text-sm font-light text-gray-400">Currently logged in as {{ user.email }}</p>
         </div>
         <button @click="handleClick"
-        class="text-lg font-medium bg-green-400 px-8 py-2 text-white rounded-full focus:outline-none hover:bg-green-500">
+        class="text-base md:text-lg font-medium bg-green-400 px-5 md:px-8 py-2 text-white rounded-full focus:outline-none hover:bg-green-500">
             Logout
         </button>
   </nav>

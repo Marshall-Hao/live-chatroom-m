@@ -1,5 +1,5 @@
 <template>
-  <div class="bg-white justify-self-center w-3/5 p-8 rounded-2xl shadow-lg mt-20 grid">
+  <div class="bg-white justify-self-center w-11/12 md:w-3/5 p-8 rounded-2xl shadow-lg mt-20 grid">
       <Navbar @logout="logoutUser"/>
       <ChatWindow />
       <NewChatForm />

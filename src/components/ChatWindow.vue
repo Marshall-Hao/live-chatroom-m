@@ -1,12 +1,12 @@
 <template>
     <div>
         <div v-if="error">{{ error }}</div>
-        <div v-if="documents" ref="message" class="space-y-3 bg-gray-50 rounded-xl py-6 px-2 mt-5 h-80 overflow-y-auto">
+        <div v-if="documents" ref="message" class="space-y-3 bg-gray-50 rounded-xl py-6 px-2 mt-5 h-96 md:h-80 overflow-y-auto">
             <div v-for="doc in formatteDocuments" :key="doc.id" class="block">
                 <span class="text-sm text-gray-400 font-medium">{{ doc.createdAt }}</span>
-                <div class="space-x-3">
-                    <span class="inline-block text-lg font-semibold tracking-wide">{{ doc.name }}</span>
-                    <span class="inline-block text-md text-base font-medium text-gray-700">{{ doc.message }}</span>
+                <div class="flex">
+                    <span class="inline-block text-lg font-semibold tracking-wide mr-3">{{ doc.name }}</span>
+                    <span class="inline-block text-md text-base font-medium text-gray-700 overflow-ellipsis break-all">{{ doc.message }}</span>
                 </div>
             </div>
         </div>
