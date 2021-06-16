@@ -1,13 +1,13 @@
 import { ref } from "@vue/reactivity"
 import { projectFirestore } from "../firebase/config"
 
-const getCollection = async (collection) => {
+const getCollection = (collection) => {
     const documents = ref(null)
     const error = ref(null)
 
-    let collection = projectFirestore.collection(collection).orderBy('createdAt')
+    let collectionRef = projectFirestore.collection(collection).orderBy('createdAt')
 
-    collection.onSnapshot(() => {
+    collectionRef.onSnapshot((snap) => {
         let results = []
         snap.docs.forEach(doc => {
            doc.data().createdAt && results.push({ ...doc.data(), id: doc.id })
