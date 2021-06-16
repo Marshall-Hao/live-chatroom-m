@@ -1,5 +1,6 @@
 {
   "hosting": {
+    "site": "live-chatroom-666",
     "public": "dist",
     "ignore": [
       "firebase.json",
