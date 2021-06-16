@@ -1,7 +1,7 @@
 <template>
     <div>
         <div v-if="error">{{ error }}</div>
-        <div v-if="documents" ref="message" class="space-y-3 bg-gray-50 rounded-xl py-10 px-2 mt-5 h-80 overflow-y-auto">
+        <div v-if="documents" ref="message" class="space-y-3 bg-gray-50 rounded-xl py-6 px-2 mt-5 h-80 overflow-y-auto">
             <div v-for="doc in formatteDocuments" :key="doc.id" class="block">
                 <span class="text-sm text-gray-400 font-medium">{{ doc.createdAt }}</span>
                 <div class="space-x-3">

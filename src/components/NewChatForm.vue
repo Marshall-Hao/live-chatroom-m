@@ -3,7 +3,7 @@
       <textarea placeholder="Type a message and hit enter to send..." 
       v-model="message"
       @keypress.enter.prevent="handleSubmit"
-      class="w-full focus:outline-none mt-5 border border-gray-200 rounded-2xl p-3 h-24 text-md font-medium text-gray-700">
+      class="w-full focus:outline-none mt-5 border border-gray-200 rounded-2xl p-3 h-20 text-md font-medium text-gray-700">
       </textarea>
       <div class="text-xs font-light text-red-600">{{ error }}</div>
   </form>
