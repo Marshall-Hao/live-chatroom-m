@@ -1,9 +1,9 @@
 <template>
     <div>
         <div v-if="error">{{ error }}</div>
-        <div v-if="documents" class="space-y-3 bg-gray-50 rounded-xl py-10 px-2 mt-5">
-            <div v-for="doc in documents" :key="doc.id" class="block">
-                <span class="text-sm text-gray-400 font-medium">{{ doc.createdAt.toDate() }}</span>
+        <div v-if="documents" ref="message" class="space-y-3 bg-gray-50 rounded-xl py-10 px-2 mt-5 h-80 overflow-y-auto">
+            <div v-for="doc in formatteDocuments" :key="doc.id" class="block">
+                <span class="text-sm text-gray-400 font-medium">{{ doc.createdAt }}</span>
                 <div class="space-x-3">
                     <span class="inline-block text-lg font-semibold tracking-wide">{{ doc.name }}</span>
                     <span class="inline-block text-md text-base font-medium text-gray-700">{{ doc.message }}</span>
@@ -15,12 +15,30 @@
 
 <script>
 import getCollection from '../composables/getCollection'
+import { formatDistanceToNow } from 'date-fns'
+import { computed, onUpdated } from '@vue/runtime-core'
+import { ref } from '@vue/reactivity'
 
 export default {
     setup() {
         const { documents, error } = getCollection('messages')
 
-        return { error, documents }
+        const formatteDocuments = computed(() => {
+            if (documents.value) {
+                return documents.value.map(doc => {
+                    let time = formatDistanceToNow(doc.createdAt.toDate())
+                    return { ...doc, createdAt: time}
+                })
+            }
+        })
+
+        //auto-scroll to bottom of chatbox
+        const message = ref(null)
+
+        onUpdated(() => {
+            message.value.scrollTop = message.value.scrollHeight
+        })
+        return { error, documents, formatteDocuments, message }
     }
 
 
