@@ -21,7 +21,7 @@ Chatroom:
 ![Details](./src/assets/screenshots/Chatroom.png)
 
 ## Setup
-Online Visit(https://vue-firbase-m-blog.web.app/)
+Online Visit(https://live-chatroom-666.web.app/)
 
 For Localhost
 
