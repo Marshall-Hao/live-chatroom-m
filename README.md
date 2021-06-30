@@ -21,7 +21,7 @@ Chatroom:
 ![Details](./src/assets/screenshots/Chatroom.png)
 
 ## Setup
-Online Visit(https://nations-list.firebaseapp.com/)
+Online Visit(https://vue-firbase-m-blog.web.app/)
 
 For Localhost
 
